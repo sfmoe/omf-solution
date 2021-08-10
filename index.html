@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="./omf.css">
+    <script src="./omf.js"></script>
+</head>
+<body>
+    <section class="main">
+        <header>
+            <div class="container">
+                <h1>One-time Loan Payment</h1>
+                <p>Fill out the form below to complete your payment.</p>
+            </div>
+        </header>
+
+        <form name="main-payment-form" id="main-payment-form" action="/secure-payment" method="post">
+            <div class="container form-container">
+
+                <div class="input-container">
+                    <label for="account-number">Loan Account Number</label>
+                    <input type="text" name="account-number" id="account-number">
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="payment-group">
+                        <div class="input-group">
+                        <div class="input-container">
+                                <div class="label">Type of Account:</div>
+                                <div class="payment-selector-group">
+                                    
+                                    <label for="payment-checking" class="radio-label">
+                                        Checking
+                                        <input type="radio" name="payment-type" id="payment-checking" value="checking-container" checked>
+                                        <span class="radio-style"></span>
+                                    </label>
+                                    
+                                    <label for="payment-debit" class="radio-label" >
+                                        Debit Card
+                                        <input type="radio" name="payment-type" id="payment-debit" value="debit-container">
+                                        <span class="radio-style"></span>
+                                    </label>
+                                </div>
+                        </div>
+                        
+                        <div class="payment-group-inputs" id="checking-container">
+                                <div class="input-container">
+                                    <label for="routing-number">Routing Number</label>
+                                    <input type="text" name="routing-number" id="routing-number" maxlength="9">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label for="bank-acount-number">Bank Account Number</label>
+                                    <input type="number" name="bank-acount-number" id="bank-acount-number">   
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label for="confirm-bank-acount-number">Confirm Bank Account Number</label>
+                                    <input type="number" name="confirm-bank-acount-number" id="confirm-bank-acount-number" data-confirm="bank-acount-number"> 
+                                    <span class="error-message"></span>
+                                </div>
+                        </div>
+    
+                        <div class="payment-group-inputs" id="debit-container">
+                                <div class="input-container">
+                                    <label for="card-number">Card Number</label>
+                                    <input type="number" name="card-number" id="card-number">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="input-container">
+                                    <label for="card-name">Name On Card</label>
+                                    <input type="text" name="card-name" id="card-name">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="card-group">
+                                    <div class="input-container">
+                                        <label for="card-expiration">Expiration Date</label>
+                                        <input type="text" name="card-expiration" id="card-expiration">
+                                        <span class="error-message"></span>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="text" name="card-cvv" id="card-cvv" maxlength="3">
+                                        <span class="error-message"></span>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="payment-sample">
+                            <div class="sample-checking checking-container">
+                                <p>Where can I find the routing and account number?</p>
+                                <img src="check.png" alt="check routing and account number sample">
+                            </div>
+                            <div class="sample-debit debit-container">
+                                <p>Where can I find the CVV number?</p>
+                                <img src="cvv.png" alt="debit card cvv sample">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="container"><button type="submit">Make Payment</button></div>
+            
+        </form>
+    </section>
+</body>
+</html>
